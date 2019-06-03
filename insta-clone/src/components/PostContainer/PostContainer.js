@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
+import './PostContainer.scss';
 
 const PostContainer = (props) => {
 
@@ -11,20 +12,20 @@ const PostContainer = (props) => {
     return(
         <div className="full-post">
             <header>
-                <img src={props.post.thumbnailUrl} alt={props.post.username} />
+                <img className="user-thumbnail" src={props.post.thumbnailUrl} alt={props.post.username} />
                 <h3>{props.post.username}</h3>
             </header>
             <div className="img-container">
                 <img src={props.post.imageUrl} alt={imageAlt} />
             </div>
             <div className="img-footer">
-                <i class="far fa-heart"></i>
-                <i class="far fa-comment"></i>
+                <i class="far fa-heart fa-2x"></i>
+                <i class="far fa-comment fa-2x"></i>
                 <p className="likes">{props.post.likes} likes</p>
             </div>
             <CommentSection 
                 commentArray={props.post.comments} 
-                timestamp={props.post.timestamp}
+                timeStamp={props.post.timestamp}
             />
         </div>
     );

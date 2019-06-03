@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
+import './CommentSection.scss';
 
 
 class CommentSection extends React.Component {
@@ -13,10 +14,11 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="comment-section">
                 {this.props.commentArray.map(comment => {
                     return <Comment comment={comment} />
                 })}
+                <p className="time-stamp"> {this.props.timeStamp}</p>
                 <form>
                     <input type="text" placeholder="Add a comment..." />
                     <button>Post</button>

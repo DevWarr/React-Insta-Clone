@@ -1,0 +1,27 @@
+.search-bar {
+    width: 100%;
+    position: fixed;
+    background: #FFFFFF;
+    border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+
+    i {
+        margin: 0 10px;
+    }
+
+    form{
+        flex-grow: 1;
+
+        input {
+            height: 28px;
+            width: 218px;
+            text-align: center;
+            background: #F5F5F5;
+            border: 1px solid #DDDDDD;
+            border-radius: 5px;
+            box-shadow: none;
+        }
+    }
+}

@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <SearchBar />
+      <div className="spacer" />
       {dummyData.map(post => <PostContainer post={post} key={post.id} />)}
     </div>
   );
