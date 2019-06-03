@@ -11,6 +11,19 @@
         margin: 0 10px;
     }
 
+    .img-container{
+        height: 32px;
+        border-left: 1px solid black;
+        padding-left: 10px;
+        margin-left: 5px;
+
+        img {
+            height: 32px;
+            width: auto;
+            
+        }
+    }
+
     form{
         flex-grow: 1;
 
@@ -18,7 +31,7 @@
             height: 28px;
             width: 218px;
             text-align: center;
-            background: #F5F5F5;
+            background: #F8F8F8;
             border: 1px solid #DDDDDD;
             border-radius: 5px;
             box-shadow: none;

@@ -4,45 +4,49 @@
     border: 1px solid #DDDDDD;
     border-radius: 5px;
     background: #FFFFFF;
-}
 
-header {
-    display: flex;
-    align-items: center;
-}
 
-.user-thumbnail {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin: 0 10px;
-}
+    header {
+        display: flex;
+        align-items: center;
+        
+        .user-thumbnail {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
 
-h3 {
-    font-size: 1rem;
-}
-
-.img-container {
-    width: 100%;
-    height: auto;
-    img {
-        width: 100%;
+        h3 {
+            font-size: 1rem;
+        }
     }
-}
 
-.img-footer {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px 15px 5px;
-    i {
-        margin-right: 20px;
-        color: gray;
-    }
-    .likes {
+    .img-container {
         width: 100%;
-        margin: 0;
-        margin-top: 5px;
-        text-align: left;
-        font-weight: bold;
+        height: auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .img-footer {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 15px 5px;
+
+        i {
+            margin-right: 20px;
+            color: gray;
+        }
+
+        .likes {
+            width: 100%;
+            margin: 0;
+            margin-top: 5px;
+            text-align: left;
+            font-weight: bold;
+        }
     }
 }

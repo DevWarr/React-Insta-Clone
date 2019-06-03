@@ -1,12 +1,20 @@
 import React from 'react';
 import './SearchBar.scss';
+import instagramWord from '../../assets/instagramWord.png';
 
 const SearchBar = () => {
+
+    const nothing = e => {
+        e.preventDefault();
+    }
+
     return(
         <div className="search-bar">
             <i class="fab fa-instagram fa-2x"></i>
-            <img />
-            <form>
+            <div className="img-container">
+                <img src={instagramWord} alt="Instagram" />
+            </div>
+            <form onSubmit={nothing}>
                 <input type="text" placeholder="Search" />
             </form>
             <i class="far fa-compass fa-2x"></i>

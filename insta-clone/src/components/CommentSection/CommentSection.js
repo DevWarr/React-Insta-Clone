@@ -12,6 +12,10 @@ class CommentSection extends React.Component {
         this.props = props;
     }
 
+    nothing = e => {
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div className="comment-section">
@@ -21,7 +25,7 @@ class CommentSection extends React.Component {
                 <p className="time-stamp"> {this.props.timeStamp}</p>
                 <form>
                     <input type="text" placeholder="Add a comment..." />
-                    <button>Post</button>
+                    <button onClick={this.nothing} >Post</button>
                 </form>
             </div>
         );
