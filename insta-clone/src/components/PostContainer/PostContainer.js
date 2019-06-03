@@ -18,7 +18,9 @@ const PostContainer = (props) => {
                 <img src={props.post.imageUrl} alt={imageAlt} />
             </div>
             <div className="img-footer">
-                {/* PLACE ICONS HERE */}
+                <i class="far fa-heart"></i>
+                <i class="far fa-comment"></i>
+                <p className="likes">{props.post.likes} likes</p>
             </div>
             <CommentSection 
                 commentArray={props.post.comments} 

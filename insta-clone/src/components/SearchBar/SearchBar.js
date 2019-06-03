@@ -4,13 +4,13 @@ import React from 'react';
 const SearchBar = () => {
     return(
         <div className="search-bar">
-            <img />
+            <img src="" alt="instagram logo" />
             <img />
             <form>
                 <input type="text" placeholder="Search" />
             </form>
-            <img />
-            <img />
+            <i class="far fa-compass"></i>
+            <i class="far fa-heart"></i>
             <img />
         </div>
     );
