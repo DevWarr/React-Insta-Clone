@@ -10,16 +10,16 @@ const SearchBar = () => {
 
     return(
         <div className="search-bar">
-            <i class="fab fa-instagram fa-2x"></i>
+            <i className="fab fa-instagram fa-2x"></i>
             <div className="img-container">
                 <img src={instagramWord} alt="Instagram" />
             </div>
             <form onSubmit={nothing}>
                 <input type="text" placeholder="Search" />
             </form>
-            <i class="far fa-compass fa-2x"></i>
-            <i class="far fa-heart fa-2x"></i>
-            <i class="far fa-user fa-2x"></i>
+            <i className="far fa-compass fa-2x"></i>
+            <i className="far fa-heart fa-2x"></i>
+            <i className="far fa-user fa-2x"></i>
         </div>
     );
 }

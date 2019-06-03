@@ -20,7 +20,7 @@ class CommentSection extends React.Component {
         return (
             <div className="comment-section">
                 {this.props.commentArray.map(comment => {
-                    return <Comment comment={comment} />
+                    return <Comment comment={comment} key={comment.id}/>
                 })}
                 <p className="time-stamp"> {this.props.timeStamp}</p>
                 <form>
