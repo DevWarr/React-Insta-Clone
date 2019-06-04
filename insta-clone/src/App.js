@@ -4,14 +4,30 @@ import SearchBar from './components/SearchBar/SearchBar';
 import PostContainer from './components/PostContainer/PostContainer';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <SearchBar />
-      <div className="spacer" />
-      {dummyData.map(post => <PostContainer post={post} key={post.id} />)}
-    </div>
-  );
+class App extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      data: []
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      data: dummyData
+    })
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        <SearchBar />
+        <div className="spacer" />
+        <PostContainer postArr={this.state.data} />
+      </div>
+    );
+  }
 }
 
 export default App;
