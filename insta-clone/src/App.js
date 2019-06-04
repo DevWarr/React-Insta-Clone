@@ -66,6 +66,7 @@ class App extends React.Component {
     const newData = this.state.data;
     newData[tpi].timestamp = timeStamp;
     newData[tpi].comments.push(comment)
+    console.log(newData);
 
     this.setState({
       data: newData
