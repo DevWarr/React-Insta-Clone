@@ -6,7 +6,7 @@ import './PostContainer.scss';
 
 const PostContainer = (props) => {
     return (
-        <div className="full-post">
+        <div className="post-container">
             {props.postArr.map(post => <Post post={post} key={post.id} />)}
         </div>
     );

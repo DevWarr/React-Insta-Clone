@@ -9,7 +9,7 @@ const Post = (props) => {
         `${props.post.username}'s post`;
 
     return(
-        <>
+        <div className="full-post">
             <header>
                 <img className="user-thumbnail" src={props.post.thumbnailUrl} alt={props.post.username} />
                 <h3>{props.post.username}</h3>
@@ -25,8 +25,9 @@ const Post = (props) => {
             <CommentSection 
                 commentArray={props.post.comments} 
                 timeStamp={props.post.timestamp}
+                id={props.post.id}
             />
-        </>
+        </div>
     );
 }
 
