@@ -15,6 +15,7 @@ class CommentSection extends React.Component {
     }
 
     addComment = (e) => {
+        e.preventDefault();
         if (this.state.input) {
             // Classic Date settings, I suppose
             const options = {weekday: "short", month: "long", year: "numeric", hour: "numeric", minute: "numeric"};

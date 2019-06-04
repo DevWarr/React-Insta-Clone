@@ -19,8 +19,9 @@ const Post = (props) => {
             </div>
             <div className="img-footer">
                 <i 
-                    className="far fa-heart fa-2x" 
-                    onclick={props.toggleLike}
+                    className="far fa-heart fa-2x"
+                    id={props.post.id} 
+                    onClick={props.toggleLike}
                 ></i>
                 <i className="far fa-comment fa-2x"></i>
                 <p className="likes">{props.post.likes} likes</p>

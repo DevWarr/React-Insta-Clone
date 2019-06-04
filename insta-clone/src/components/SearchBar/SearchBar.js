@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchBar.scss';
 import instagramWord from '../../assets/instagramWord.png';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
 
     const nothing = e => {
         e.preventDefault();
@@ -15,7 +15,7 @@ const SearchBar = () => {
                 <img src={instagramWord} alt="Instagram" />
             </div>
             <form onSubmit={nothing}>
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search" onChange={props.search} />
             </form>
             <i className="far fa-compass fa-2x"></i>
             <i className="far fa-heart fa-2x"></i>

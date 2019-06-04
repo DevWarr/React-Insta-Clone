@@ -37,8 +37,13 @@
         padding: 10px 15px 5px;
 
         i {
+            cursor: pointer;
             margin-right: 20px;
             color: gray;
+        }
+
+        .fas {
+            color: red;
         }
 
         .likes {
