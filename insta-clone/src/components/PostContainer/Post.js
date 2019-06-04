@@ -19,7 +19,7 @@ const Post = (props) => {
             </div>
             <div className="img-footer">
                 <i 
-                    className="far fa-heart fa-2x"
+                    className={props.post.heart}
                     id={props.post.id} 
                     onClick={props.toggleLike}
                 ></i>
@@ -28,6 +28,7 @@ const Post = (props) => {
             </div>
             <CommentSection 
                 commentArray={props.post.comments} 
+                addComment={props.addComment}
                 timeStamp={props.post.timestamp}
                 id={props.post.id}
             />

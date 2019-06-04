@@ -8,14 +8,20 @@ class App extends React.Component {
   constructor () {
     super();
     this.state = {
-      data: []
+      data: [],
+      search: ''
     }
   }
 
   componentDidMount() {
+    const postArray = JSON.parse(localStorage.getItem('postArray'));
     this.setState({
-      data: dummyData
-    })
+      data: postArray ? postArray : dummyData
+    });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('postArray', JSON.stringify(this.state.data));
   }
 
 
@@ -32,25 +38,45 @@ class App extends React.Component {
     const gray = "far fa-heart fa-2x"
     const red = "fas fa-heart fa-2x"
 
-    if(e.target.className === gray) {
-      e.target.className = red;
-      newData[targetPostIndex].likes ++
+    if(newData[targetPostIndex].heart === gray) {
+      newData[targetPostIndex].heart = red;
+      newData[targetPostIndex].likes++;
       this.setState({
         data: newData
       });
     } else {
-      e.target.className = gray;
-      newData[targetPostIndex].likes --
+      newData[targetPostIndex].heart = gray;
+      newData[targetPostIndex].likes--;
       this.setState({
         data: newData
       });
     }
   }
 
+  addCommentToArray = (id, comment, timeStamp) => {
+    // Go into the state and find which object in the array matches our target
+    // ie: Which post are we actually liking?
+    // tpi = targetPostIndex
+    const tpi = this.state.data.findIndex(post => {
+      return post.id === id
+    })
+    if (tpi === -1) {console.log('error, invalid post id'); return}
+
+    // Update our comment array and timestamp
+    const newData = this.state.data;
+    newData[tpi].timestamp = timeStamp;
+    newData[tpi].comments.push(comment)
+
+    this.setState({
+      data: newData
+    });
+  }
+
 
   search = e => {
-    const filteredData = this.state.data;
-
+    this.setState({
+      search: e.target.value
+    })
   }
 
 
@@ -63,7 +89,8 @@ class App extends React.Component {
         />
         <div className="spacer" />
         <PostContainer 
-          postArr={this.state.data} 
+          addComment={this.addCommentToArray}
+          postArr={this.state.data.filter(post => post.username.includes(this.state.search))} 
           toggleLike={this.toggleLike} 
         />
       </div>

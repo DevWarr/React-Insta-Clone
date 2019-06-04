@@ -10,6 +10,7 @@ const PostContainer = (props) => {
             {props.postArr.map(post => {
                 return <Post 
                             post={post} 
+                            addComment={props.addComment}
                             key={post.id} 
                             toggleLike={props.toggleLike} 
                         />

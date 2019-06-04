@@ -15,7 +15,11 @@ const SearchBar = (props) => {
                 <img src={instagramWord} alt="Instagram" />
             </div>
             <form onSubmit={nothing}>
-                <input type="text" placeholder="Search" onChange={props.search} />
+                <input 
+                    type="text" 
+                    placeholder="Search" 
+                    onChange={props.search} 
+                />
             </form>
             <i className="far fa-compass fa-2x"></i>
             <i className="far fa-heart fa-2x"></i>
