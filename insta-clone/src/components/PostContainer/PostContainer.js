@@ -7,7 +7,13 @@ import './PostContainer.scss';
 const PostContainer = (props) => {
     return (
         <div className="post-container">
-            {props.postArr.map(post => <Post post={post} key={post.id} />)}
+            {props.postArr.map(post => {
+                return <Post 
+                            post={post} 
+                            key={post.id} 
+                            toggleLike={props.toggleLike} 
+                        />
+            })}
         </div>
     );
 }

@@ -33,27 +33,27 @@ const dummyData = [
         timestamp: "July 15th 2017, 03:12:09 pm",
         comments: [
             {
-                id: "4",
+                id: "1",
                 username: "twitch",
                 text: "Epic Street Fighter action here in Las Vegas at #EVO2017!"
             },
             {
-                id: "5",
+                id: "2",
                 username: "michaelmarzetta",
                 text: "Omg that match was crazy"
             },
             {
-                id: "6",
+                id: "3",
                 username: "themexican_leprechaun",
                 text: "What a setup"
             },
             {
-                id: "7",
+                id: "4",
                 username: "dennis_futbol",
                 text: "It that injustice"
             },
             {
-                id: "8",
+                id: "5",
                 username: "dennis_futbol",
                 text: "Is"
             }
@@ -68,27 +68,27 @@ const dummyData = [
         timestamp: "July 14th 2017, 10:04:08 am",
         comments: [
             {
-                id: "9",
+                id: "1",
                 username: "playhearthstone",
                 text: "Power alone is not to be feared. Fear instead those who wield it! #FrozenThrone #Expansion #DeathKnights"
             },
             {
-                id: "10",
+                id: "2",
                 username: "tapmelon",
                 text: "Wish that death knight could be added as a new playable class in this expansion."
             },
             {
-                id: "11",
+                id: "3",
                 username: "micpetboudreau",
                 text: "Can't wait"
             },
             {
-                id: "12",
+                id: "4",
                 username: "awaywetravel",
                 text: "I <3 Hearthstone."
             },
             {
-                id: "13",
+                id: "5",
                 username: "awesomebt28",
                 text: "I like how gul'dan looks so old and useless"
             }

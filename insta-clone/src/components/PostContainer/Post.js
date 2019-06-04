@@ -18,7 +18,10 @@ const Post = (props) => {
                 <img src={props.post.imageUrl} alt={imageAlt} />
             </div>
             <div className="img-footer">
-                <i className="far fa-heart fa-2x"></i>
+                <i 
+                    className="far fa-heart fa-2x" 
+                    onclick={props.toggleLike}
+                ></i>
                 <i className="far fa-comment fa-2x"></i>
                 <p className="likes">{props.post.likes} likes</p>
             </div>

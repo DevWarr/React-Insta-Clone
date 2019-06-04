@@ -24,7 +24,10 @@ class App extends React.Component {
       <div className="App">
         <SearchBar />
         <div className="spacer" />
-        <PostContainer postArr={this.state.data} />
+        <PostContainer 
+          postArr={this.state.data} 
+          toggleLike={this.toggleLike} 
+        />
       </div>
     );
   }
