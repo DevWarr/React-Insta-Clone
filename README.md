@@ -1,5 +1,7 @@
 # React-Insta-Clone
 
+Looking for the project URL? https://thatsnotinstagram.netlify.com
+
 ## Introduction
 
 - The purpose of this project is to continue building on your knowledge of React that you have gained thus far.
