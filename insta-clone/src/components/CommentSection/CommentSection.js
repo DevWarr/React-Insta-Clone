@@ -15,6 +15,12 @@ class CommentSection extends React.Component {
         }
     }
 
+    componentDidMount() {
+        const loginUser = localStorage.getItem('username');
+        this.setState({
+            username: loginUser ? loginUser : "vgstories"
+        });
+    }
 
 
     addComment = (e) => {
@@ -26,7 +32,7 @@ class CommentSection extends React.Component {
 
             const newComment = {
                 id: Date.now(),
-                username: "vgstories",
+                username: this.state.username,
                 text: this.state.input
             }
             this.props.addComment(this.state.id, newComment, date)

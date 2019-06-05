@@ -14,7 +14,6 @@ const Comment = (props) => {
 
 Comment.propTypes = {
     comment: PropTypes.shape({
-        id: PropTypes.string,
         username: PropTypes.string,
         text: PropTypes.string
     })

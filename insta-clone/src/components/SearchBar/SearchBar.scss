@@ -7,6 +7,10 @@
     justify-content: space-around;
     padding: 15px 20px;
 
+    .cursor {
+        cursor: pointer;
+    }
+
     i {
         margin: 0 10px;
     }
@@ -24,7 +28,7 @@
         }
     }
 
-    form{
+    form {
         flex-grow: 1;
 
         input {
@@ -37,4 +41,18 @@
             box-shadow: none;
         }
     }
+
+    .logout {
+        position: fixed;
+        background: white;
+        color: lightblue;
+        display: none;
+        &:hover {
+            color: #4664F5;
+        }
+    }
+    .logout.visible {
+        display: block;
+    }
+
 }

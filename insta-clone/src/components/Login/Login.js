@@ -2,12 +2,17 @@ import React from 'react';
 import instagramWord from '../../assets/instagramWord.png';
 
 class Login extends React.Component {
-    state ={
+    state = {
         username: "",
         password: "",
 
     }
 
+    login = e => {
+        e.preventDefault();
+        localStorage.setItem('username', this.state.username);
+        window.location.reload();
+    }
 
     handleChanges = e => {
         e.preventDefault();
@@ -31,14 +36,14 @@ class Login extends React.Component {
                             type="text"
                             name="username"
                             value={this.state.username}
-                            onChange={this.state.handleChanges}
+                            onChange={this.handleChanges}
                         />
                         <input 
                             className="password"
                             type="password"
                             name="password"
                             value={this.state.password}
-                            onChange={this.state.handleChanges}
+                            onChange={this.handleChanges}
                         />
                         <button type="submit">Log in</button>
                     </form>
