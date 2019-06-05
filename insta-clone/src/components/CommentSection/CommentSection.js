@@ -10,12 +10,13 @@ class CommentSection extends React.Component {
             input: "",
             commentArray: props.commentArray,
             timeStamp: props.timeStamp,
-            id: props.id
+            id: props.id,
+            commenting: false
         }
     }
 
 
-    
+
     addComment = (e) => {
         e.preventDefault();
         if (this.state.input) {
@@ -33,11 +34,19 @@ class CommentSection extends React.Component {
         }
     }
 
+    delete = (comment) => {
+        const commentIndex = this.state.commentArray.findIndex(obj => obj.id === comment.id)
+        
+        if (commentIndex === 0) {console.log("cannot delete original user comment"); return}
+        this.props.delete(this.props.id, comment.id)
+    }
+
 
     handleChanges = e => {
         e.preventDefault();
         this.setState({
-            input: e.target.value
+            input: e.target.value,
+            commenting: e.target.value === '' ? false : true
         })
     }
 
@@ -47,7 +56,11 @@ class CommentSection extends React.Component {
         return (
             <div className="comment-section">
                 {this.state.commentArray.map(comment => {
-                    return <Comment comment={comment} key={comment.id}/>
+                    return <Comment 
+                        comment={comment} 
+                        key={comment.id} 
+                        delete={this.delete} 
+                    />
                 })}
                 <p className="time-stamp"> {this.state.timeStamp}</p>
                 <form onSubmit={this.addComment}>
@@ -57,7 +70,10 @@ class CommentSection extends React.Component {
                         value={this.state.input}
                         onChange={this.handleChanges}
                     />
-                    <button type="Submit">Post</button>
+                    <button 
+                        className={this.state.commenting ? "commenting" : null}
+                        type="Submit"
+                    >Post</button>
                 </form>
             </div>
         );

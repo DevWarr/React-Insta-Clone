@@ -73,6 +73,25 @@ class App extends React.Component {
     });
   }
 
+  deleteComment = (postId, commentId) => {
+    // Go into the state and find which object in the array matches our target
+    // ie: Which post are we actually liking?
+    // tpi = targetPostIndex
+    const tpi = this.state.data.findIndex(post => {
+      return post.id === postId
+    })
+    if (tpi === -1) {console.log('error, invalid post id'); return}
+
+    // Update our comment array
+    const newData = this.state.data;
+    const deleteMe = newData[tpi].comments.findIndex(comment => comment.id === commentId);
+    newData[tpi].comments.splice(deleteMe, 1)
+    this.setState({
+      data: newData
+    });
+
+  }
+
 
   search = e => {
     this.setState({
@@ -91,6 +110,7 @@ class App extends React.Component {
         <div className="spacer" />
         <PostContainer 
           addComment={this.addCommentToArray}
+          deleteComment={this.deleteComment}
           postArr={this.state.data.filter(post => post.username.includes(this.state.search))} 
           toggleLike={this.toggleLike} 
         />

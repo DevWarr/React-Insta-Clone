@@ -5,9 +5,32 @@
 .comment-section {
 
     p {
-        margin: 8px 0;
+        position: relative;
+        margin: 0;
+        padding: 4px 0;
         text-align: left;
         padding-left: 15px;
+
+        .delete {
+            cursor: pointer;
+            margin-right: 15px;
+            padding: 0 5px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: white;
+            color: lightblue;
+            display: none;
+            &:hover {
+                color: #4664F5;
+            }
+        }
+
+        &:hover {
+            .delete {
+                display: block;
+            }
+        }
     }
 
     .time-stamp {
@@ -34,6 +57,9 @@
             border: none;
             font-weight: bold;
             padding-right: 15px;
+        }
+        .commenting {
+            color: #4664F5;
         }
     }
 }

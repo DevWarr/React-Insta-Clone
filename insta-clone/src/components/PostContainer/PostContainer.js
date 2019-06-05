@@ -13,6 +13,7 @@ const PostContainer = (props) => {
                             addComment={props.addComment}
                             key={post.id} 
                             toggleLike={props.toggleLike} 
+                            delete={props.deleteComment}
                         />
             })}
         </div>

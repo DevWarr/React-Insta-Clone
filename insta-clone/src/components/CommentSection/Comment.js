@@ -2,8 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 const Comment = (props) => {
+
+    const deleteComment = () => {
+        props.delete(props.comment);
+    }
+
     return (
-        <p><span className="username-comment">{props.comment.username} </span>{props.comment.text}</p>
+        <p><span className="username-comment">{props.comment.username} </span>{props.comment.text}<span className="delete" onClick={deleteComment}>Delete</span></p>
     );
 }
 
@@ -16,3 +21,5 @@ Comment.propTypes = {
 }
 
 export default Comment;
+
+// <span onClick={this.delete}>Delete</span>

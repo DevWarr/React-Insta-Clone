@@ -31,6 +31,7 @@ const Post = (props) => {
                 addComment={props.addComment}
                 timeStamp={props.post.timestamp}
                 id={props.post.id}
+                delete={props.delete}
             />
         </div>
     );

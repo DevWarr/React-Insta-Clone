@@ -43,5 +43,5 @@
 - [x] Persist your data using `localStorage`. If done correctly, you will be able to refresh your page and still see your new comments.
   - _Changes made: Heart className is now listed in the dummyData, so it can be updated with setState_
   - _each comment section needs it's own storage_
-- Add the ability to delete a comment from your data. If your data is in `localhost`, make sure to delete it from there as well.
+- [x] Add the ability to delete a comment from your data. If your data is in `localhost`, make sure to delete it from there as well.
 - Implement a third-party library that does "fuzzy" searches into your search bar functionality (ie - search terms that aren't exact, like "phils" or "coffeephilz", would still return the username "philzcoffe").
