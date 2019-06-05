@@ -54,7 +54,7 @@ class PostsPage extends React.Component {
   
     addCommentToArray = (id, comment, timeStamp) => {
       // Go into the state and find which object in the array matches our target
-      // ie: Which post are we actually liking?
+      // ie: Which post are we add ing a comment to?
       // tpi = targetPostIndex
       const tpi = this.state.data.findIndex(post => {
         return post.id === id
@@ -100,7 +100,6 @@ class PostsPage extends React.Component {
   
   
     render() {
-      console.log(this.state.data);
       return (
         <div className="App">
           <SearchBar 

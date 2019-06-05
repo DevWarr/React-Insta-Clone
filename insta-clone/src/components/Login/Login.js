@@ -1,16 +1,50 @@
 import React from 'react';
 import instagramWord from '../../assets/instagramWord.png';
+import loginData from '../data/loginData';
+import uuid from 'uuid';
 import './Login.scss';
 
 class Login extends React.Component {
     state = {
         username: "",
         password: "",
+        data: [],
+        error: "error"
+    }
+
+    componentDidMount() {
+        const localLogins = JSON.parse(localStorage.getItem('loginArray'));
+        this.setState({
+            data: localLogins ? localLogins : loginData
+        })
     }
 
     login = e => {
         e.preventDefault();
-        localStorage.setItem('username', this.state.username);
+
+        // Create object for login
+        const loginUser = {
+            user: this.state.username,
+            pass: this.state.password,
+            id: uuid.v4()
+        }
+
+        // Go into the state and search for a user in the array that matches input
+        // ie: Does the user exist in our 'database'?
+        const userIndex = this.state.data.findIndex(user => {
+            return user.username === loginUser.user && user.password === loginUser.pass
+        })
+
+        // Doesn't exist? Conosle.log error, and that is all.
+        if (userIndex === -1) {
+            console.log(this.state);
+            this.setState( () => ({
+                error: "error visible"
+            }));
+            return}
+
+        // User exists? Set that username to localStorage and reload the page
+        localStorage.setItem('username', this.state.data[userIndex].username);
         window.location.reload();
     }
 
@@ -28,6 +62,7 @@ class Login extends React.Component {
                 <div className="login-container">
                     <img src={instagramWord} alt="Instagram" />
                     <h2>Log In</h2>
+                    <p className={this.state.error}>User and/or pass do not match.</p>
                     <form 
                         className="login-form"
                         onSubmit={this.login}

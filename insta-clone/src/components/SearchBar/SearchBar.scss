@@ -44,6 +44,11 @@
 
     .logout {
         position: fixed;
+        top: 50px;
+        right: 32px;
+        padding: 10px 20px;
+        border: 1px solid #DDDDDD;
+        border-radius: 3px;
         background: white;
         color: lightblue;
         display: none;

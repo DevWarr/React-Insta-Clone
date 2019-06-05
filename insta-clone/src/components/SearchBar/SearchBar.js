@@ -2,50 +2,53 @@ import React from 'react';
 import './SearchBar.scss';
 import instagramWord from '../../assets/instagramWord.png';
 
-const SearchBar = (props) => {
+class SearchBar extends React.Component {
+    state = {
+        menu: "cursor logout"
+    }
 
-    let logoutVisibility = "cursor logout";
 
-    const nothing = e => {
+    nothing = e => {
         e.preventDefault();
     }
 
-    const logOut = e => {
+    logOut = e => {
         e.preventDefault();
         localStorage.removeItem('username');
         window.location.reload();
     }  
 
-    const toggleMenu = () => {
-        logoutVisibility = logoutVisibility.includes("visible") ?
-            "cursor logout"
-            :
-            "cursor logout visible";
-        console.log(logoutVisibility);
+    toggleMenu = () => {
+        this.setState(prevState => ({
+            menu: prevState.menu.includes("visible") ?
+                "cursor logout"
+                :
+                "cursor logout visible"
+        }));
     }
 
-
-    return(
-        <div className="search-bar">
-            <i className="fab fa-instagram fa-2x"></i>
-            <div className="img-container">
-                <img src={instagramWord} alt="Instagram" />
+    render() {
+        return(
+            <div className="search-bar">
+                <i className="fab fa-instagram fa-2x"></i>
+                <div className="img-container">
+                    <img src={instagramWord} alt="Instagram" />
+                </div>
+                <form onSubmit={this.nothing}>
+                    <input 
+                        type="text" 
+                        placeholder="Search" 
+                        onChange={this.props.search} 
+                    />
+                </form>
+                <i className="far fa-compass fa-2x"></i>
+                <i className="far fa-heart fa-2x"></i>
+                <i className="far fa-user fa-2x cursor" onClick={this.toggleMenu}></i>
+                <div className={this.state.menu} onClick={this.logOut}>
+                    Log Out
+                </div>
             </div>
-            <form onSubmit={nothing}>
-                <input 
-                    type="text" 
-                    placeholder="Search" 
-                    onChange={props.search} 
-                />
-            </form>
-            <i className="far fa-compass fa-2x"></i>
-            <i className="far fa-heart fa-2x"></i>
-            <i className="far fa-user fa-2x cursor" onClick={toggleMenu}></i>
-            <div className={logoutVisibility} onClick={logOut}>
-                Log Out
-            </div>
-        </div>
-    );
+    );}
 }
 
 export default SearchBar;

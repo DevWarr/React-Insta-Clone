@@ -22,13 +22,26 @@
         img {
             width: 60%;
             height: auto;
-            margin-top: 10%;
+            margin-top: 5%;
         }
 
         h2 {
             margin: 0;
             margin-bottom: 5%;
             color: lightblue;
+        }
+
+        .error {
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+            font-size: 0.9rem;
+            color: red;
+            opacity: 0;
+        }
+        .error.visible {
+            opacity: 1;
+            transition: opacity 0.5s linear;
         }
         
         form {
