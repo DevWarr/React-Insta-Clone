@@ -6,7 +6,7 @@ import './PostContainer.scss';
 
 const PostContainer = (props) => {
     return (
-        <div className="post-container">
+        <>
             {props.postArr.map(post => {
                 return <Post 
                             post={post} 
@@ -16,7 +16,7 @@ const PostContainer = (props) => {
                             delete={props.deleteComment}
                         />
             })}
-        </div>
+        </>
     );
 }
 

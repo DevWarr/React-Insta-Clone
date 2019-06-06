@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
+import { PostContainer, Header, UserThumbnail, Username, ImageContainer, Image, Footer, Likes } from './PostStyles';
 
 const Post = (props) => {
 
@@ -9,23 +10,23 @@ const Post = (props) => {
         `${props.post.username}'s post`;
 
     return(
-        <div className="full-post">
-            <header>
-                <img className="user-thumbnail" src={props.post.thumbnailUrl} alt={props.post.username} />
-                <h3>{props.post.username}</h3>
-            </header>
-            <div className="img-container">
-                <img src={props.post.imageUrl} alt={imageAlt} />
-            </div>
-            <div className="img-footer">
+        <PostContainer>
+            <Header>
+                <UserThumbnail src={props.post.thumbnailUrl} alt={props.post.username} />
+                <Username>{props.post.username}</Username>
+            </Header>
+            <ImageContainer>
+                <Image src={props.post.imageUrl} alt={imageAlt} />
+            </ImageContainer>
+            <Footer>
                 <i 
                     className={props.post.heart}
                     id={props.post.id} 
                     onClick={props.toggleLike}
                 ></i>
                 <i className="far fa-comment fa-2x"></i>
-                <p className="likes">{props.post.likes} likes</p>
-            </div>
+                <Likes>{props.post.likes} likes</Likes>
+            </Footer>
             <CommentSection 
                 commentArray={props.post.comments} 
                 addComment={props.addComment}
@@ -33,7 +34,7 @@ const Post = (props) => {
                 id={props.post.id}
                 delete={props.delete}
             />
-        </div>
+        </PostContainer>
     );
 }
 

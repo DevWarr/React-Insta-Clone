@@ -2,6 +2,7 @@ import React from 'react';
 import dummyData from '../data/dummy-data';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from '../PostContainer/PostContainer';
+import { App, Spacer } from './PostStyles';
 
 class PostsPage extends React.Component {
     constructor () {
@@ -101,18 +102,18 @@ class PostsPage extends React.Component {
   
     render() {
       return (
-        <div className="App">
+        <App>
           <SearchBar 
             search={this.search}
           />
-          <div className="spacer" />
+          <Spacer space="100px" />
           <PostContainer 
             addComment={this.addCommentToArray}
             deleteComment={this.deleteComment}
             postArr={this.state.data.filter(post => post.username.includes(this.state.search))} 
             toggleLike={this.toggleLike} 
           />
-        </div>
+        </App>
       );
     }
   }
