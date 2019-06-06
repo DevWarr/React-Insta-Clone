@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const LoginPage = styled.div`
+export const RegisterPage = styled.div`
 	max-width: 3500px;
 	width: 100%;
 	height: 90vh;
@@ -10,9 +10,9 @@ export const LoginPage = styled.div`
 	align-items: center;
 `;
 
-export const LoginContainer = styled.div`
+export const RegisterContainer = styled.div`
 	width: 350px;
-	height: 380px;
+	height: 420px;
 	background: white;
 	border: 1px solid #dddddd;
 	border-radius: 5px;
@@ -31,8 +31,8 @@ export const Logo = styled.img`
 
 export const Welcome = styled.h2`
 	margin: 0;
-	margin-bottom: 5%;
-
+	margin-bottom: 0;
+	
 	${props => {
 		if(props.typing !== "") {return css`color: #4664F5;`;}
         else {return css`color: lightblue;`;}
@@ -59,8 +59,8 @@ export const Form = styled.form`
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	height: 45%;
-	margin-bottom: 5%;
+	height: 50%;
+	margin-bottom: 0;
 `;
 
 export const Input = styled.input`
@@ -71,7 +71,7 @@ export const Input = styled.input`
 	border-radius: 5px;
 `;
 
-export const LoginButton = styled.button`
+export const RegisterButton = styled.button`
 	color: white;
 	border: none;
 	font-weight: bold;
@@ -88,7 +88,7 @@ export const LoginButton = styled.button`
 
 `;
 
-export const ToRegisterForm = styled.p`
+export const ToLoginForm = styled.p`
     margin: 0;
     padding: 1%;
     color: lightblue;

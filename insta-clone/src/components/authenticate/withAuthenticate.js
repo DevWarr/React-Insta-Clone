@@ -2,22 +2,28 @@ import React from 'react';
 
 
 
-const withAuthenticate = LoggedIn => LoginPage =>
+const withAuthenticate = (MainPage, Login, Register) =>
     class extends React.Component {
         state = {
-            login: false
+            login: null,
+            register: null
         }
 
         componentDidMount() {
             const loggedIn = localStorage.getItem('username');
+            const registerNow = localStorage.getItem('register');
             this.setState({
-                login: loggedIn ? true : false
+                login: loggedIn ? true : false,
+                register: registerNow
             })
         }
 
         render() {
 
-            return this.state.login ? <LoggedIn /> : <LoginPage />
+            return this.state.login ? 
+                <MainPage /> 
+                : 
+                this.state.register ? <Register /> : <Login />
         }
     }
 

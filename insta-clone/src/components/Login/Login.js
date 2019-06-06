@@ -2,7 +2,7 @@ import React from 'react';
 import instagramWord from '../../assets/instagramWord.png';
 import loginData from '../data/loginData';
 // import './Login.scss';
-import { LoginPage, LoginContainer, Logo, Welcome, Error, Form, Input, LoginButton } from './LoginStyles';
+import { LoginPage, LoginContainer, Logo, Welcome, Error, Form, Input, LoginButton, ToRegisterForm } from './LoginStyles';
 
 class Login extends React.Component {
     state = {
@@ -51,13 +51,18 @@ class Login extends React.Component {
         })
     }
 
+    toRegisterForm() {
+        localStorage.setItem('register', 'true')
+        window.location.reload();
+    }
+
 
     render() {
         return (
             <LoginPage>
                 <LoginContainer>
                     <Logo src={instagramWord} alt="Instagram" />
-                    <Welcome>Log In</Welcome>
+                    <Welcome typing={this.state.username} >Log In</Welcome>
                     <Error error={this.state.error}>
                         User and/or pass do not match.
                     </Error>
@@ -80,6 +85,7 @@ class Login extends React.Component {
                         />
                         <LoginButton typing={this.state.username} type="submit">Log in</LoginButton>
                     </Form>
+                    <ToRegisterForm onClick={this.toRegisterForm}>New user? Register here</ToRegisterForm>
                 </LoginContainer>
             </LoginPage>
         );
