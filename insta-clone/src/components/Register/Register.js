@@ -65,7 +65,7 @@ class Register extends React.Component {
         // Create object for new user
         const newLogin = {
             username: this.state.username,
-            password: this.state.password,
+            password: this.state.passwordOne,
             id: uuid.v4()
         }
 
@@ -85,8 +85,6 @@ class Register extends React.Component {
         localStorage.setItem('username', newLogin.username);
         localStorage.removeItem('register')
         window.location.reload();
-
-
 
     }
 
