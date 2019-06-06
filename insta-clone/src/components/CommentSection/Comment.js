@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import { Username, DeleteComment, CommentContent } from './CommentStyles';
 
 const Comment = (props) => {
 
@@ -8,7 +9,11 @@ const Comment = (props) => {
     }
 
     return (
-        <p><span className="username-comment">{props.comment.username} </span>{props.comment.text}<span className="delete" onClick={deleteComment}>Delete</span></p>
+        <CommentContent>
+            <Username>{props.comment.username} </Username>
+            {props.comment.text}
+            <DeleteComment onClick={deleteComment}>Delete</DeleteComment>
+        </CommentContent>
     );
 }
 

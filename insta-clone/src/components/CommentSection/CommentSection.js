@@ -1,6 +1,7 @@
 import React from 'react';
 import Comment from './Comment';
-import './CommentSection.scss';
+// import './CommentSection.scss';
+import { TimeStamp, Form, Input, Button } from './CommentStyles';
 
 
 class CommentSection extends React.Component {
@@ -36,7 +37,7 @@ class CommentSection extends React.Component {
                 text: this.state.input
             }
             this.props.addComment(this.state.id, newComment, date)
-            this.setState({input: ''})
+            this.setState({input: '', commenting: false})
         }
     }
 
@@ -68,19 +69,19 @@ class CommentSection extends React.Component {
                         delete={this.delete} 
                     />
                 })}
-                <p className="time-stamp"> {this.state.timeStamp}</p>
-                <form onSubmit={this.addComment}>
-                    <input 
+                <TimeStamp> {this.state.timeStamp}</TimeStamp>
+                <Form onSubmit={this.addComment}>
+                    <Input 
                         type="text" 
                         placeholder="Add a comment..."
                         value={this.state.input}
                         onChange={this.handleChanges}
                     />
-                    <button 
-                        className={this.state.commenting ? "commenting" : null}
+                    <Button 
+                        commenting={this.state.commenting}
                         type="Submit"
-                    >Post</button>
-                </form>
+                    >Post</Button>
+                </Form>
             </div>
         );
     }
