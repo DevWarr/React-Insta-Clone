@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
         console.log(this.state);
         return(
             <Header>
-                <i className="fab fa-instagram fa-2x"></i>
+                <i className="header fab fa-instagram fa-2x"></i>
                 <ImageContainer>
                     <Image src={instagramWord} alt="Instagram" />
                 </ImageContainer>
@@ -40,9 +40,9 @@ class SearchBar extends React.Component {
                         onChange={this.props.search} 
                     />
                 </Form>
-                <i className="far fa-compass fa-2x"></i>
-                <i className="far fa-heart fa-2x"></i>
-                <i className="far fa-user fa-2x cursor" onClick={this.toggleMenu}></i>
+                <i className="header far fa-compass fa-2x"></i>
+                <i className="header far fa-heart fa-2x"></i>
+                <i className="header far fa-user fa-2x cursor" onClick={this.toggleMenu}></i>
                 <Logout menu={this.state.menu} onClick={this.logOut}>
                     Log Out
                 </Logout>

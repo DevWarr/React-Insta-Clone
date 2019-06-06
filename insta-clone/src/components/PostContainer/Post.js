@@ -24,7 +24,7 @@ const Post = (props) => {
                     id={props.post.id} 
                     onClick={props.toggleLike}
                 ></i>
-                <i className="far fa-comment fa-2x"></i>
+                <i className="post far fa-comment fa-2x"></i>
                 <Likes>{props.post.likes} likes</Likes>
             </Footer>
             <CommentSection 

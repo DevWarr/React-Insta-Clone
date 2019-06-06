@@ -35,8 +35,8 @@ class PostsPage extends React.Component {
   
       // After error checking, we assign some initial values:
       const newData = this.state.data;
-      const gray = "far fa-heart fa-2x"
-      const red = "fas fa-heart fa-2x"
+      const gray = "post far fa-heart fa-2x"
+      const red = "post fas fa-heart fa-2x"
   
       if(newData[targetPostIndex].heart === gray) {
         newData[targetPostIndex].heart = red;
