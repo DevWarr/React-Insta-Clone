@@ -1,15 +1,15 @@
 import React from 'react';
 import instagramWord from '../../assets/instagramWord.png';
 import loginData from '../data/loginData';
-import uuid from 'uuid';
-import './Login.scss';
+// import './Login.scss';
+import { LoginPage, LoginContainer, Logo, Welcome, Error, Form, Input, LoginButton } from './LoginStyles';
 
 class Login extends React.Component {
     state = {
         username: "",
         password: "",
         data: [],
-        error: "error"
+        error: false
     }
 
     componentDidMount() {
@@ -22,26 +22,22 @@ class Login extends React.Component {
     login = e => {
         e.preventDefault();
 
-        // Create object for login
-        const loginUser = {
-            user: this.state.username,
-            pass: this.state.password,
-            id: uuid.v4()
-        }
+        // Create object for login check
+        const user = this.state.username;
+        const pass = this.state.password
 
         // Go into the state and search for a user in the array that matches input
         // ie: Does the user exist in our 'database'?
-        const userIndex = this.state.data.findIndex(user => {
-            return user.username === loginUser.user && user.password === loginUser.pass
+        const userIndex = this.state.data.findIndex(userObj => {
+            return userObj.username === user && userObj.password === pass
         })
 
         // Doesn't exist? Conosle.log error, and that is all.
         if (userIndex === -1) {
             console.log(this.state);
-            this.setState( () => ({
-                error: "error visible"
-            }));
-            return}
+            this.setState({error: true});
+            return
+        }
 
         // User exists? Set that username to localStorage and reload the page
         localStorage.setItem('username', this.state.data[userIndex].username);
@@ -58,35 +54,34 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-page">
-                <div className="login-container">
-                    <img src={instagramWord} alt="Instagram" />
-                    <h2>Log In</h2>
-                    <p className={this.state.error}>User and/or pass do not match.</p>
-                    <form 
-                        className="login-form"
+            <LoginPage>
+                <LoginContainer>
+                    <Logo src={instagramWord} alt="Instagram" />
+                    <Welcome>Log In</Welcome>
+                    <Error error={this.state.error}>
+                        User and/or pass do not match.
+                    </Error>
+                    <Form 
                         onSubmit={this.login}
                     >
-                        <input 
-                            className="username"
+                        <Input 
                             type="text"
                             name="username"
                             placeholder="username..."
                             value={this.state.username}
                             onChange={this.handleChanges}
                         />
-                        <input 
-                            className="password"
+                        <Input 
                             type="password"
                             name="password"
                             placeholder="password..."
                             value={this.state.password}
                             onChange={this.handleChanges}
                         />
-                        <button className={this.state.username ? "typing" : null} type="submit">Log in</button>
-                    </form>
-                </div>
-            </div>
+                        <LoginButton typing={this.state.username} type="submit">Log in</LoginButton>
+                    </Form>
+                </LoginContainer>
+            </LoginPage>
         );
     }
 }

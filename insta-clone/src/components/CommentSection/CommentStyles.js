@@ -28,7 +28,7 @@ export const Button = styled.button`
     padding-right: 15px;
 
     ${props => {
-        if (props.commenting) {
+        if (props.commenting !== "") {
             return (css`cursor: pointer;   color: #4664F5;`)
         } else {
             return (css`cursor: default;   color: lightblue;`)

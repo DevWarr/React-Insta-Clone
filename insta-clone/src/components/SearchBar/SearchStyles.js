@@ -38,6 +38,7 @@ export const Search = styled.input`
 `;
 
 export const Logout = styled.div`
+    cursor: pointer;
     position: fixed;
     top: 50px;
     right: 32px;

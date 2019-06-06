@@ -12,7 +12,6 @@ class CommentSection extends React.Component {
             commentArray: props.commentArray,
             timeStamp: props.timeStamp,
             id: props.id,
-            commenting: false
         }
     }
 
@@ -37,7 +36,7 @@ class CommentSection extends React.Component {
                 text: this.state.input
             }
             this.props.addComment(this.state.id, newComment, date)
-            this.setState({input: '', commenting: false})
+            this.setState({input: ''})
         }
     }
 
@@ -53,7 +52,6 @@ class CommentSection extends React.Component {
         e.preventDefault();
         this.setState({
             input: e.target.value,
-            commenting: e.target.value === '' ? false : true
         })
     }
 
@@ -78,7 +76,7 @@ class CommentSection extends React.Component {
                         onChange={this.handleChanges}
                     />
                     <Button 
-                        commenting={this.state.commenting}
+                        commenting={this.state.input}
                         type="Submit"
                     >Post</Button>
                 </Form>
