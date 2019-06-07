@@ -4,6 +4,12 @@ import { Username, DeleteComment, CommentContent } from './CommentStyles';
 
 const Comment = (props) => {
 
+
+    /**When we click 'delete' on a comment,
+     * This function simply calls another function with our clicked comment object as an argument.
+     * delete is a property passed down from a parent-
+     *   - refer to CommentSection.js for more info
+     */
     const deleteComment = () => {
         props.delete(props.comment);
     }
