@@ -1,0 +1,66 @@
+.username-comment {
+    font-weight: bold;
+}
+
+.comment-section {
+
+    p {
+        position: relative;
+        margin: 0;
+        padding: 4px 0;
+        text-align: left;
+        padding-left: 15px;
+
+        .delete {
+            cursor: pointer;
+            margin-right: 15px;
+            padding: 0 5px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: white;
+            color: lightblue;
+            display: none;
+            &:hover {
+                color: #4664F5;
+            }
+        }
+
+        &:hover {
+            .delete {
+                display: block;
+            }
+        }
+    }
+
+    .time-stamp {
+        margin: 0 0 15px;
+        color: gray;
+        font-size: 0.9em;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #DDDDDD;
+
+        input {
+            border: none;
+            padding: 20px 0 20px 15px;
+            flex-grow: 1;
+        }
+
+        button {
+            background: transparent;
+            color: lightblue;
+            border: none;
+            font-weight: bold;
+            padding-right: 15px;
+        }
+        .commenting {
+            cursor: pointer;
+            color: #4664F5;
+        }
+    }
+}
